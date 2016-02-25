@@ -1,0 +1,10 @@
+[Unit]
+Description=NFS Auto Mount
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/nfs_automount
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
