@@ -1,10 +1,12 @@
 [Unit]
-Description=NFS Auto Mount
+Description=Automatically mount, unmount, and remount NFS shares.
+After=syslog.target
 After=network.target
 
 [Service]
+Type=simple
+Restart=on-failure
 ExecStart=/usr/local/bin/nfs_automount
-Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target
